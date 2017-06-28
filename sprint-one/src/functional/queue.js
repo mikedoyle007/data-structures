@@ -31,6 +31,13 @@ var Queue = function() {
   };
 
   someInstance.size = function() {
+    if (size < 0) {
+      size = 0;
+      // also reset head and tail
+      head = 0;
+      tail = 0;
+    }
+    return size;
   };
 
   return someInstance;
