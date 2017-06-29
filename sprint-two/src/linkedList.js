@@ -27,7 +27,7 @@ var LinkedList = function() {
       if (currentVal.value === target) {
         return true;
       } else {
-        currentVal = currentVal.next
+        currentVal = currentVal.next;
       }
     }
     return false;
