@@ -7,18 +7,46 @@ var HashTable = function() {
 
 HashTable.prototype.insert = function(k, v) {
   var index = getIndexBelowMaxForKey(k, this._limit);
-  console.log('index', index);
-  this._storage.set(index, v);
+  if (this._storage.get(index) === undefined) {
+    this._storage.set(index, [[k, v]]);
+  } else {
+    var pairs = this._storage.get(index);
+
+    for (var i = 0; i < pairs.length; i++) {
+      if (pairs[i][0] === k) {
+        pairs[i][1] = v;
+      } else {
+        pairs.push([k, v]); 
+      }
+    } 
+    this._storage.set(index, pairs);
+  }
 };
 
 HashTable.prototype.retrieve = function(k) {
   var index = getIndexBelowMaxForKey(k, this._limit);
-  return this._storage.get(index);
+  var pairs = this._storage.get(index);
+
+  for (var i = 0; i < pairs.length; i++) {
+    var key = pairs[i][0];
+    var value = pairs[i][1];
+    if (k === key) {
+      return value;
+    } 
+  }
 };
 
 HashTable.prototype.remove = function(k) {
   var index = getIndexBelowMaxForKey(k, this._limit);
-  this._storage.set(index, undefined);
+
+  var pairs = this._storage.get(index);
+  for (var i = 0; i < pairs.length; i++) {
+    if (pairs[i][0] === k) {
+      pairs[i][0] = undefined;
+      pairs[i][1] = undefined;
+    }
+  }
+  this._storage.set(index, pairs);
 };
 
 
