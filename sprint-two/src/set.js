@@ -6,11 +6,13 @@ var Set = function() {
 
 var setPrototype = {};
 
-setPrototype.add = function(item) {
+setPrototype.add = function(item) { 
   this._storage[item] = item;
 };
 
-setPrototype.contains = function(item) {};
+setPrototype.contains = function(item) {
+  return this._storage.hasOwnProperty(item) ? true: false;
+};
 
 setPrototype.remove = function(item) {};
 
