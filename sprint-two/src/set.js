@@ -11,7 +11,7 @@ setPrototype.add = function(item) {
 };
 
 setPrototype.contains = function(item) {
-  return this._storage.hasOwnProperty(item) ? true: false;
+  return this._storage.hasOwnProperty(item) ? true : false;
 };
 
 setPrototype.remove = function(item) {};
