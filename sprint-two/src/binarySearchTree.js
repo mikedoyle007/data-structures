@@ -38,7 +38,13 @@ BinarySearchTree.prototype.contains = function(value) {
 };
 
 BinarySearchTree.prototype.depthFirstLog = function(func) {
-
+  func(this.value);
+  if (this.left !== null) {
+    this.left.depthFirstLog(func);
+  }
+  if (this.right !== null) {
+    this.right.depthFirstLog(func);
+  }
 };
 /*
  * Complexity: What is the time complexity of the above functions?
