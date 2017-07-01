@@ -9,11 +9,13 @@ var Tree = function(value) {
 
 var treeMethods = {};
 
+// Time complexity = Constant
 treeMethods.addChild = function(value) {
   var childTree = new Tree(value);
   this.children.push(childTree);
 };
 
+// Time complexity = Linear
 treeMethods.contains = function(target) {
   var result = false;
 
