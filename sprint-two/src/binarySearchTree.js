@@ -10,7 +10,6 @@ BinarySearchTree.prototype.insert = function(value) {
       this.right = new BinarySearchTree(value);
     } else {
       this.right.insert(value);
-
     }
   } else {
     if (this.left === null) {
