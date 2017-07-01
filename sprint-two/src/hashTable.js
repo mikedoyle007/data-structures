@@ -5,6 +5,7 @@ var HashTable = function() {
   this._storage = LimitedArray(this._limit);
 };
 
+// Time complexity = Linear
 HashTable.prototype.insert = function(k, v) {
   var index = getIndexBelowMaxForKey(k, this._limit);
   
@@ -23,6 +24,7 @@ HashTable.prototype.insert = function(k, v) {
   }
 };
 
+// Time complexity = Linear
 HashTable.prototype.retrieve = function(k) {
   var index = getIndexBelowMaxForKey(k, this._limit);
   var pairs = this._storage.get(index);
@@ -36,6 +38,7 @@ HashTable.prototype.retrieve = function(k) {
   }
 };
 
+// Time complexity = Linear
 HashTable.prototype.remove = function(k) {
   var index = getIndexBelowMaxForKey(k, this._limit);
 
