@@ -1,17 +1,40 @@
 var BinarySearchTree = function(value) {
-  this._storage = {};
-  this._storage.value = value;
-  this._storage.right = null;
-  this._storage.left = null;
+  this.value = value;
+  this.right = null;
+  this.left = null;
 };
 
-BinarySearchTree.prototype.left = function() {};
+BinarySearchTree.prototype.insert = function(value) {
+  if (value > this.value) {
+    if (this.right === null) {
+      this.right = new BinarySearchTree(value);
+    } else {
+      this.right.insert(value);
 
-BinarySearchTree.prototype.right = function() {};
+    }
+  } else {
+    if (this.left === null) {
+      this.left = new BinarySearchTree(value);
+    } else {
+      this.left.insert(value);
+    }
+  }
+};
 
-BinarySearchTree.prototype.insert = function() {};
+BinarySearchTree.prototype.contains = function(value) {
+  var currentNode = node;
 
-BinarySearchTree.prototype.contains = function() {};
+  // start at current node passed in
+  // is currentNode === value ?
+  // return true
+  // if value < currentNode
+  // go left
+  // recurse(newNode, value)
+  // else
+  // go right
+  // recurse(newNode, value)
+
+};
 
 BinarySearchTree.prototype.depthFirstLog = function() {};
 /*
