@@ -28,19 +28,18 @@ BinarySearchTree.prototype.contains = function(value) {
   if (value > this.value) {
     if (this.right !== null) {
       return this.right.contains(value);
-    } else {
-      return false;
     }
   } else {
     if (this.left !== null) {
       return this.left.contains(value);
-    } else {
-      return false;
     }
   }
+  return false;
 };
 
-BinarySearchTree.prototype.depthFirstLog = function() {};
+BinarySearchTree.prototype.depthFirstLog = function(func) {
+
+};
 /*
  * Complexity: What is the time complexity of the above functions?
  */
