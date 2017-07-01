@@ -4,6 +4,7 @@ var BinarySearchTree = function(value) {
   this.left = null;
 };
 
+// Time Complexity = logarithmic
 BinarySearchTree.prototype.insert = function(value) {
   if (value > this.value) {
     if (this.right === null) {
@@ -20,6 +21,7 @@ BinarySearchTree.prototype.insert = function(value) {
   }
 };
 
+// Time complexity = logarithmic
 BinarySearchTree.prototype.contains = function(value) {
   if (value === this.value) {
     return true;
@@ -36,6 +38,7 @@ BinarySearchTree.prototype.contains = function(value) {
   return false;
 };
 
+// Time complexity = Linear
 BinarySearchTree.prototype.depthFirstLog = function(func) {
   func(this.value);
   if (this.left !== null) {
