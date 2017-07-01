@@ -5,14 +5,16 @@ var LinkedList = function() {
 
   // Time complexity = Constant
   list.addToTail = function(value) {
-    var newNode = Node(value);
-    if (list.head === null) {
-      list.head = newNode;
-      list.tail = newNode;
-    } else {
-      var oldTail = list.tail;
-      list.tail.next = newNode;
-      list.tail = newNode;
+    if (value !== undefined) {
+      var newNode = Node(value);
+      if (list.head === null) {
+        list.head = newNode;
+        list.tail = newNode;
+      } else {
+        var oldTail = list.tail;
+        list.tail.next = newNode;
+        list.tail = newNode;
+      }
     }
   };
 
