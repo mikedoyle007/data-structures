@@ -22,18 +22,22 @@ BinarySearchTree.prototype.insert = function(value) {
 };
 
 BinarySearchTree.prototype.contains = function(value) {
-  var currentNode = node;
-
-  // start at current node passed in
-  // is currentNode === value ?
-  // return true
-  // if value < currentNode
-  // go left
-  // recurse(newNode, value)
-  // else
-  // go right
-  // recurse(newNode, value)
-
+  if (value === this.value) {
+    return true;
+  }
+  if (value > this.value) {
+    if (this.right !== null) {
+      return this.right.contains(value);
+    } else {
+      return false;
+    }
+  } else {
+    if (this.left !== null) {
+      return this.left.contains(value);
+    } else {
+      return false;
+    }
+  }
 };
 
 BinarySearchTree.prototype.depthFirstLog = function() {};
